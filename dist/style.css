@@ -1,0 +1,2 @@
+*{box-sizing:border-box;margin:0;padding:0}.container{align-items:center;display:flex;flex-direction:column;justify-content:center}.heading{font-size:3rem;text-align:center}.card{border:2px solid #fff;box-shadow:0 2px 5px 2px rgba(0,0,0,.2);display:flex;flex-direction:column;gap:1rem;max-width:35rem;padding:2rem}.card__img{height:15rem;width:100%}.card__title{font-size:1.8rem;font-weight:600}.card__desc{font-size:1.4rem}.card__desc:first-letter{color:crimson;font-size:2rem;font-weight:700}
+/*# sourceMappingURL=style.css.map */
