@@ -1,0 +1,15 @@
+@use "sass:math";
+
+$browser-context:16;
+
+@function rem($pixels, $context: $browser-context){
+    $result: math.div($pixels, $context) * 1rem;
+    @return $result;
+}
+
+@function em($pixels, $context: $browser-context){
+    $result: math.div($pixels, $context) * 1em;
+    @return $result;
+}
+
+$header-height: rem(100);

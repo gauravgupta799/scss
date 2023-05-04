@@ -1,0 +1,78 @@
+@use "./fonts" as *;
+@use "./colors" as *;
+
+@mixin background-cover{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+// ======== flex toolkit =========//
+@mixin flex-center-horizontal{
+    display:flex;
+    justify-content: center;
+}
+
+@mixin flex-column{
+    display:flex;
+    flex-direction: column;
+}
+
+@mixin flex-center{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+@mixin flex-center-vertical{
+    display:flex;
+    align-items:center;
+}
+
+@mixin flex-space-between{
+    @include flex-center-vertical;
+    justify-content: space-between;
+}
+
+@mixin display-content($direction, $align, $justify){
+    display:$direction;
+    align-items: $align;
+    justify-content:$justify;
+}
+
+// ======== pseudo ============= //
+@mixin pseudo-cover{
+    content: '';
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+}
+
+// ======== setting font for header and body ======= //
+@mixin font-body{
+    font-family:$ff-primary;
+    font-weight:normal;
+}
+
+@mixin font-heading{
+    font-family:$ff-secondary;
+    font-weight:bold;
+}
+
+@mixin transform($value){
+    transform:translateX($value);
+    -webkit-transform:translateX($value);
+    -moz-transform:translateX($value);
+    -ms-transform:translateX($value);
+    -o-transform:translateX($value);
+}
+
+@mixin translate($time, $timingFunc){
+    translate:all $time $timingFunc;
+}
+
+// @mixin padding(){
+//     padding:
+// }

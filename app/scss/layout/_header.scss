@@ -1,0 +1,201 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/breakpoints" as *;
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/fonts" as *;
+@use "../base/typograpghy" as *;
+
+.header {
+    
+    &__wrapper--desktop{
+        height: 80px;
+
+        .header__container--main{
+            display: flex;
+            align-items: center; 
+            justify-content: space-between;
+
+            .header__logo{
+                height: 60px;
+        
+                .logo__img{
+                    height: 50px;
+                }
+            }
+
+            .header__navContainer{
+                    display: none;
+
+                @include breakpoint-lg{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    height: 60px;
+                } 
+                   
+                .nav__wrapper{
+                    margin: 0 auto;
+                    width: 40%;
+
+                    .nav__lists{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        width: 100%;
+
+                        .nav__item{
+                            .nav__link{
+                                font-size: rem(16);
+                                font-family: $ff-dmBold;
+                                font-weight: bold;
+                                color:$clr-primary;                          
+                            }
+                        }
+                    }
+                }
+                .nav__btn{
+                    width: 227px;
+                    height: 51px;
+                    font-size: rem(16);
+                }
+            }
+
+            .hamburger__wrapper{
+                display: block;
+
+                @include breakpoint-lg{
+                    display: none;
+                } 
+            }
+
+        }
+
+    }
+
+    // &__container--main{
+    //     display: flex;
+    //     align-items: center;
+
+
+    //     .header__navContainer{
+    //         width: 100%;
+    //         display: none;
+    //         justify-content: space-between;
+
+    //         @include breakpoint-lg{
+    //             @include display-content(flex, center, space-between);
+    //         } 
+
+    //         .nav__wrapper{         
+    //             width: 100%;
+    //             .nav__lists{
+    //                 @include display-content(flex, center, center);
+    //                 gap:4rem;
+                
+    //                 .nav__item{
+    
+    //                     .nav__link{
+    //                         font-family: $ff-dmBold;
+    //                         font-weight: bold;
+    //                         font-size: 1.6rem;
+    //                         color:$clr-primary;
+    //                         letter-spacing:1px;
+    //                     }
+                       
+    //                 }
+    //             } 
+    
+    //         }
+    //         .nav__btn{
+    //             font-weight: $ff-dmBold;
+    //             font-size: 1.6rem;
+    //             font-weight: bold;
+    //             color:$clr-primary;
+    //         }
+    //     }
+
+    //     .hamburger__wrapper{
+    //         display:block;
+    //         width: 100%;
+    //         display: inline-block;
+    //         text-align: right;
+            
+    //         @include breakpoint-lg{
+    //             display: none;
+    //         } 
+    //     }
+    // }
+
+
+    &__wrapper--mobile{
+        display: block;
+        height: 100vh;
+        width: 80%;
+        background-color: $clr-primary;
+        text-align: center;
+        position:absolute;
+        top: 0;
+        @include translate(0.5s, ease-in-out);
+        @include transform(-100%);
+
+
+        .header__container--mobile{
+
+            .header__logoWrapper{
+
+                .close__icon{      
+                    background-color:$clr-white;
+                    color:$clr-primary;
+                    border-radius: 50%;
+                    padding: 6px;
+                    font-size: 4rem;
+                    cursor: pointer;
+                    width: 25px;
+                    height: 25px;
+                }
+    
+            }
+
+        }
+
+        @include breakpoint-lg{
+            display: none;
+        }
+
+        .header__logoWrapper{
+            @include display-content(flex, center, space-between);
+
+            .header__logo{
+
+                .logo__img{
+                    max-width: 120px;
+                }
+            }
+        }
+
+        .nav__wrapper{
+            @include display-content(flex, center, center);
+
+            .nav__lists{
+                @include display-content(flex, center, center);
+                flex-direction: column;
+                gap:3rem;
+
+                .nav__link{
+                //    @include make-font-size("list");
+                    font-size: 1.8rem;
+                    color:$clr-white;
+                    font-weight: bold;
+
+                }
+            }
+        }
+
+        &.active{
+            @include translate(0.5s, ease-in-out);
+            @include transform(0);
+        }
+    }
+
+}
